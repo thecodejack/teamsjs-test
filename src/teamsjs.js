@@ -19,7 +19,7 @@ export async function registerTeamsJSHooks() {
   }
 }
 
-export function function isAppCachingEnabled() {
+export function isAppCachingEnabled() {
   const currentUrl = new URL(window.location.href);
   return currentUrl.searchParams.get('isAppCaching') === 'true';
 }
