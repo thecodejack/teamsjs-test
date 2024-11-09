@@ -1,5 +1,5 @@
 import "./styles.css";
-import "./teamsjs";
+import { notifySuccess } from "./teamsjs";
 
 export default function App() {
   return (
