@@ -5,27 +5,33 @@ import { initializeMetaOsAppSdk } from "./initializeMetaOSSDK";
 export async function registerTeamsJSHooks() {
   await initializeMetaOsAppSdk();
   teamsCore.registerOnLoadHandler(async (loadContext) => {
-    if(isAppCachingEnabled()) {
-      notifyReadyToUnload();
-    } else {
       app.notifyAppLoaded();
       app.notifySuccess(); 
-    }
   });
 
   teamsCore.registerBeforeUnloadHandler((readyToUnload) => {
-    // Add the query string to the current URL
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.set('isAppCaching', 'true');
-    window.history.replaceState({}, '', currentUrl.toString());
+    window.location.replace(getReloadUrl());
     return true;
   });
+  if(isAppCachingEnabled()) {
+      notifyReadyToUnload();
+  }
 }
 
 export function function isAppCachingEnabled() {
   const currentUrl = new URL(window.location.href);
   return currentUrl.searchParams.get('isAppCaching') === 'true';
 }
+
+export const getReloadUrl = () => {
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    if (!isMetaOSAppCaching()) {
+        params.append('isAppCaching', 'true');
+    }
+    url.search = params.toString();
+    return url.toString();
+};
 
 export function notifyReadyToUnload() {
     setTimeout(() => {
