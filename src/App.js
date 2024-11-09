@@ -1,6 +1,6 @@
 import "./styles.css";
 import { notifySuccess } from "./teamsjs";
-import {useState, useEffect} from 'reactjs';
+import {useState, useEffect} from 'react';
 
 export default function App() {
   const [green, setGreen] = 
