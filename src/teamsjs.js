@@ -40,4 +40,8 @@ export function notifyReadyToUnload() {
     }, 10000); // 10 seconds (10000 milliseconds)
 }
 
+export function notifySuccess() {
+    app.notifySuccess();
+}
+
 registerTeamsJSHooks();
