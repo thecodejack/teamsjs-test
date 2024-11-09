@@ -5,8 +5,7 @@ import { initializeMetaOsAppSdk } from "./initializeMetaOSSDK";
 export async function registerTeamsJSHooks() {
   await initializeMetaOsAppSdk();
   teamsCore.registerOnLoadHandler(async (loadContext) => {
-      app.notifyAppLoaded();
-      app.notifySuccess(); 
+      
   });
 
   teamsCore.registerBeforeUnloadHandler((readyToUnload) => {
@@ -15,6 +14,8 @@ export async function registerTeamsJSHooks() {
   });
   if(isAppCachingEnabled()) {
       notifyReadyToUnload();
+  } else {
+      app.notifyAppLoaded(); 
   }
 }
 
