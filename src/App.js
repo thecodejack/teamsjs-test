@@ -11,9 +11,9 @@ export default function App() {
     }, 20000);
   }, []);
   if (green) {
-    <div className="App Green">
+      return (<div className="App Green">
         <h1>Hello TeamsJS</h1>
-      </div>
+      </div>)
   } else {
     return (
       <div className="App">
