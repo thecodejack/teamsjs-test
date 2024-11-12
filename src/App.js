@@ -12,7 +12,7 @@ export default function App() {
   }, []);
   if (green) {
       return (<div className="Green">
-        <h1>Hello TeamsJS</h1>
+        <h1>NotifySuccess</h1>
       </div>)
   } else {
     return (
