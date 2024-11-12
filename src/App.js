@@ -11,13 +11,13 @@ export default function App() {
     }, 20000);
   }, []);
   if (green) {
-      return (<div className="App Green">
+      return (<div className="Green">
         <h1>Hello TeamsJS</h1>
       </div>)
   } else {
     return (
       <div className="App">
-        <h1>Hello TeamsJS</h1>
+        <h1>Loading..</h1>
       </div>
     );
   }
