@@ -19,12 +19,6 @@ export async function registerTeamsJSHooks() {
   });
 }
 
-export function notifyReadyToUnload() {
-    setTimeout(() => {
-        sendCustomMessageMetaOS('readyToUnload');
-    }, 10000); // 10 seconds (10000 milliseconds)
-}
-
 export function notifySuccess() {
     app.notifySuccess();
 }
