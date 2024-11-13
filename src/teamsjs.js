@@ -27,7 +27,7 @@ export function isAppCachingEnabled() {
 export const getReloadUrl = () => {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
-    if (!isMetaOSAppCaching()) {
+    if (!isAppCachingEnabled()) {
         params.append('isAppCaching', 'true');
     }
     url.search = params.toString();
