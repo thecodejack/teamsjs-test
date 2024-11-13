@@ -8,7 +8,7 @@ export default function App() {
     setTimeout(()=>{
       setGreen(true);
       notifySuccess();
-    }, 15000);
+    }, 10000);
   }, []);
   if (green) {
       return (<div className="Green">
