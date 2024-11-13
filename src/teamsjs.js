@@ -8,13 +8,13 @@ export async function registerTeamsJSHooks() {
   teamsCore.registerOnLoadHandler(async (loadContext) => {
       setTimeout(() => {
         notifySuccess();
-      }, 15000);
+      }, 10000);
   });
 
   teamsCore.registerBeforeUnloadHandler((readyToUnload) => {
     setTimeout(()=> {
       readyToUnload();
-    }, 10000);
+    }, 5000);
     return true;
   });
 }
