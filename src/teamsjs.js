@@ -37,7 +37,7 @@ export const getReloadUrl = () => {
 export function notifyReadyToUnload() {
     setTimeout(() => {
         sendCustomMessageMetaOS('readyToUnload');
-    }, 10000); // 10 seconds (10000 milliseconds)
+    }, 5000); 
 }
 
 export function notifySuccess() {
